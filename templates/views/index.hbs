@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/weather.png">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="main-content card">
+        <div class="card-header">
+            {{>header}}
+        <p>Get your weather information here!</p>
+        </div>
+        <div class="card-body">
+            <form class="searchForm">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col"><input type="text" placeholder="Enter location to get weather" class="form-control location"></div>
+                    <div class="col"><button class="form-control btn-secondary col-sm-4">Search</button></div>
+                </div>
+            </div>
+        </form>
+        <br/>
+        <hr/>
+        <p id="message-1" class="text-muted"></p>
+        <p id="message-2" class="text-muted"></p>
+        <p id="message-3" class="text-success"></p>
+        </div>
+    </div>
+    {{>footer}}
+    <script src="/js/script.js"></script>
+    <!--<script src="/js/bootstrap.min.js"></script>-->
+</body>
+</html>

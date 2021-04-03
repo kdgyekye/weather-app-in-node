@@ -1,0 +1,40 @@
+body{
+    color: #000000;
+    font-family: Railway;
+    max-width: 50%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content{
+    flex-grow: 1;
+}
+
+h1{
+    font-size: 64px;
+    margin-bottom: 18px;
+}
+
+header{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+header nav a{
+    color: rgb(59, 91, 230);
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+footer{
+    border-top: 1px solid #cacabf;
+    color: #888888;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+.error{
+    color: red;
+}
