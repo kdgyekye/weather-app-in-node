@@ -5,6 +5,8 @@ const message1 = document.querySelector('#message-1');
 const message2 = document.querySelector('#message-2')
 const message3 = document.querySelector('#message-3');
 
+const navLink = document.querySelector('.nav-link');
+
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = locationField.value;
@@ -32,5 +34,10 @@ weatherForm.addEventListener('submit', (e) => {
         })
     message1.textContent=null
     locationField.value=null;
+    hr.style.display = 'none';
 })
+})
+
+navLink.addEventListener('click', () => {
+    navLink.classList.add('active')
 })

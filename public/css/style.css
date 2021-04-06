@@ -1,16 +1,22 @@
 body{
     color: #000000;
-    font-family: Railway;
-    max-width: 50%;
+    font-family: Arial;
+    /*max-width: 50%;*/
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    background-image: url('../images/red-clouds.jpg');
+    background-repeat: repeat;
+    background-size: contain;
+    background-blend-mode: luminosity;
 }
 
 .main-content{
     flex-grow: 1;
+    margin-top: 2%;
 }
 
 h1{
@@ -30,8 +36,10 @@ header nav a{
 
 footer{
     border-top: 1px solid #cacabf;
-    color: #888888;
+    color: #000000;
     margin-top: 16px;
+    margin-left: 5%;
+    margin-right: 5%;
     padding: 16px 0;
 }
 

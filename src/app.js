@@ -28,14 +28,14 @@ app.get('',(req,res) => {
 })
 app.get('/about', (req,res) => {
     res.render('about', {
-        title: 'About Page',
+        title: 'About',
         content: 'This is a dynamic page',
         author: 'Kingsley D. Gyekye'
     })
 })
 app.get('/help', (req,res) => {
     res.render('help', {
-        title: 'Help page',
+        title: 'Help',
         content: 'Contact us on 0243251803 for help',
         author: 'Kingsley D. Gyekye'
     })
