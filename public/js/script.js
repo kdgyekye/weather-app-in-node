@@ -10,7 +10,7 @@ const navLink = document.querySelector('.nav-link');
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = locationField.value;
-    const url = `http://localhost:3000/weather?address=${location}`;
+    const url = `/weather?address=${location}`;
 
     message2.textContent = null;
     message3.textContent = null;
