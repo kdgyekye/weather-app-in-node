@@ -1,43 +1,54 @@
-const locationField = document.querySelector('.location');
-const weatherForm = document.querySelector('.searchForm');
+const locationField = document.querySelector(".location");
+const weatherForm = document.querySelector(".searchForm");
 
-const message1 = document.querySelector('#message-1');
-const message2 = document.querySelector('#message-2')
-const message3 = document.querySelector('#message-3');
+const message1 = document.querySelector("#message-1");
+const message2 = document.querySelector("#message-2");
+const message3 = document.querySelector("#message-3");
+const localtime = document.querySelector("#localtime");
+const weather_description = document.querySelector("#weather_description");
+const temperature = document.querySelector("#temperature");
+const headings = document.querySelector("#forecast-section");
 
-const navLink = document.querySelector('.nav-link');
+const navLink = document.querySelector(".nav-link");
 
-weatherForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const location = locationField.value;
-    const url = `/weather?address=${location}`;
+headings.style.display = "none";
+weatherForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const location = locationField.value;
+  const url = `/weather?address=${location}`;
 
-    message2.textContent = null;
-    message3.textContent = null;
+  message2.textContent = null;
+  //headings.textContent = null;
+  /*temperature.textContent = null;
+    weather_description.textContent = null;
+    localtime.textContent = null;*/
+  headings.style.display = "none";
 
-    hr = document.querySelector('hr');
-    hr.style.display = 'none';
+  message1.textContent = "Loading Forecast Information...";
+  fetch(url).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        message3.textContent = data.error;
+      } else {
+        message2.textContent = data.location;
+        localtime.textContent = data.forecast.localtime;
+        weather_description.textContent = data.forecast.weather_descriptions;
+        temperature.textContent = `The temperature is currently ${data.forecast.temperature} but it feels like ${data.forecast.feelslike}`;
+      }
+    });
+    message1.textContent = null;
+    locationField.value = null;
+    headings.style.display = "block";
+    /*localtime.textContent = null;
+    weather_description.textContent = null
+    temperature.textContent = null*/
+  });
+});
 
-    message1.textContent ='Loading Forecast Information...'
-    fetch(url).then((response) => {
-        hr.style.display = 'block'
-        response.json().then((data) => {
-            if(data.error) {
-                message3.classList.add('text-danger')
-                message3.textContent = data.error
-            }
-            else {
-                message3.classList.remove('text-danger')
-                message2.textContent = data.location
-                message3.textContent = data.Forecast
-            }
-        })
-    message1.textContent=null
-    locationField.value=null;
-    hr.style.display = 'none';
-})
-})
-
-navLink.addEventListener('click', () => {
-    navLink.classList.add('active')
-})
+function activeLink(elem) {
+    var a = document.getElementsByTagName('a')
+    for (i = 0; i < a.length; i++) {
+        a[i].classList.remove('active')
+    }
+    elem.classList.add('active');
+}

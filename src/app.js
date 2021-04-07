@@ -30,14 +30,14 @@ app.get('',(req,res) => {
 app.get('/about', (req,res) => {
     res.render('about', {
         title: 'About',
-        content: 'This is a dynamic page',
+        content: 'This is a practice web app built by Kingsley David Gyekye(image below).',
         author: 'Kingsley D. Gyekye'
     })
 })
 app.get('/help', (req,res) => {
     res.render('help', {
         title: 'Help',
-        content: 'Contact us on 0243251803 for help',
+        content: 'Contact us on 0243251803 to report any app crashes and/or bugs',
         author: 'Kingsley D. Gyekye'
     })
 })
@@ -61,7 +61,7 @@ app.get('/weather', (req,res) => {
             }
     
             res.send({
-                Forecast: weatherData,
+                forecast: weatherData,
                 location,
                 address: req.query.address
             })

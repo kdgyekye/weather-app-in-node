@@ -14,28 +14,31 @@
     <div class="container main-content col-sm-12 col-lg-8">
         <div class="card">
             <div class="card-header">
-            {{>header}}
-            <p>Get your weather information here!</p>
+                {{>header}}
+                <p>Get your weather information here!</p>
             </div>
             <div class="card-body">
                 <form class="searchForm">
                 <div class="form-group">
                     <div class="row">
-                        <div class="col"><input type="text" placeholder="Enter location to get weather" class="form-control location"></div>
-                        <div class="col"><button class="form-control btn-success col-sm-4">Search</button></div>
+                        <div class="col"><input type="text" placeholder="Enter location to get weather" class="form-control col-sm-12" id="location"></div>
+                        <div class="col"><button class="form-control btn-success col-lg-3">Search</button></div>
                     </div>
                 </div>
             </form>
             <br/>
             <hr/>
-            <p id="message-1" class="text-muted"></p>
+            <p id="message-1" class="text-warning"></p>
             <p id="message-2" class="text-muted"></p>
-            <p id="message-3" class="text-success"></p>
+            <p id="message-3" class="text-danger"></p>
+            <div id="forecast-section">
+                <p class="text-primary">Date and Time: <span class="text-success" id="localtime"></span></p>
+                <p class="text-primary">Weather Description: <span class="text-success" id="weather_description"></span></p>
+                <p class="text-primary">Temperature: <span class="text-success" id="temperature"></span></p>
+            </div>
             </div>
         </div>
     </div>
     {{>footer}}
-    <script type="text/javascript" src="/js/script.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 </body>
 </html>

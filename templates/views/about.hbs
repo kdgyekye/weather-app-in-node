@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/card.css">
     <link rel="icon" href="/images/weather.png">
     <title>About</title>
 </head>
 <body>
-    <div class="container col-sm-12 col-lg-8 main-content">
+    <div class="container main-content col-sm-12 col-lg-8">
         <div class="card">
             <div class="card-header">
-            {{>header}}
-        <p>{{content}}</p>
-        </div>
+                {{>header}}
+                <p>{{content}}</p>
+                <p class="text-secondary">It uses data from <em>mapbox.com</em> and <em>weatherstack.com</em></p>
+                <img src="/images/me.jpg" alt="" class="img-fluid rounded mx-auto d-block" style="max-width: 70%; height: 70vh;">
+            </div>
         </div>
     </div>
     {{>footer}}

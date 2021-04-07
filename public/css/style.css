@@ -8,10 +8,10 @@ body{
     flex-direction: column;
     min-height: 100vh;
 
-    background-image: url('../images/341.jpg');
+    background-image: url('../images/blue-sky.jpg');
     background-repeat: repeat;
     background-size: cover;
-    background-blend-mode: luminosity;
+    background-blend-mode: normal;
 }
 
 .main-content{

@@ -11,8 +11,15 @@ const weather = (coordinates,callback) => {
             callback('Could not get weather information for your location',undefined)
         }
         else{
-            const {observation_time,temperature,feelslike} = response.body.current
-            callback(undefined, `At ${observation_time} It is currently ${temperature} degrees celsius outside but it feels like ${feelslike} degrees celsius`)
+            const {temperature,feelslike, weather_descriptions} = response.body.current
+            const {localtime} = response.body.location
+            const forecast = {
+                temperature,
+                feelslike,
+                weather_descriptions,
+                localtime
+            }
+            callback(undefined,forecast)
         }
     })
 }
