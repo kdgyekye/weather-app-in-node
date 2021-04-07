@@ -1,4 +1,4 @@
-const locationField = document.querySelector(".location");
+const locationField = document.querySelector("#location");
 const weatherForm = document.querySelector(".searchForm");
 
 const message1 = document.querySelector("#message-1");
