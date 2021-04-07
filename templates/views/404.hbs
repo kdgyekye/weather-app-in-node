@@ -8,12 +8,17 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/card.css">
     <link rel="icon" href="/images/weather.png">
+    <script src="https://kit.fontawesome.com/53498fc2f7.js" crossorigin="anonymous"></script>
     <title>Page Not Found</title>
 </head>
 <body>
     <div class="container main-content">
-        {{>header}}
-        <h2 class="text-danger"><b>{{content}}</b></h2>
+        <div class="card">
+            <div class="card-header">
+                {{>header}}
+            </div>
+            <div class="card-body"><h2 class="text-danger"><b>{{content}}</b></h2></div>
+        </div>
     </div>
     {{>footer}}
 </body>

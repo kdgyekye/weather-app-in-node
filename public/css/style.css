@@ -46,3 +46,8 @@ footer{
 .error{
     color: red;
 }
+
+#site-name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
