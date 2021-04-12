@@ -35,6 +35,8 @@ weatherForm.addEventListener("submit", (e) => {
         weather_description.textContent = data.forecast.weather_descriptions;
         temperature.textContent = `The temperature is currently ${data.forecast.temperature} degrees celsius but it feels like ${data.forecast.feelslike} degrees celsius`;
       }
+    }).catch( err => {
+      message3.textContent = data.error;
     });
     message1.textContent = null;
     locationField.value = null;
