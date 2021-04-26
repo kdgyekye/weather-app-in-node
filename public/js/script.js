@@ -18,18 +18,19 @@ weatherForm.addEventListener("submit", (e) => {
   const url = `/weather?address=${location}`;
 
   message2.textContent = null;
-  //headings.textContent = null;
-  /*temperature.textContent = null;
-    weather_description.textContent = null;
-    localtime.textContent = null;*/
   headings.style.display = "none";
 
   message1.textContent = "Loading Forecast Information...";
   fetch(url).then((response) => {
+    localtime
     response.json().then((data) => {
       if (data.error) {
         message3.textContent = data.error;
+        localtime.textContent = null;
+        weather_description.textContent = null;
+        temperature.textContent = null;
       } else {
+        message3.textContent = null;
         message2.textContent = data.location;
         localtime.textContent = data.forecast.localtime;
         weather_description.textContent = data.forecast.weather_descriptions;
